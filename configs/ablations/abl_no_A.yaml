@@ -1,0 +1,4 @@
+base: ../default.yaml
+run: {name: abl_no_A}
+views: {use: [S, G, D]}
+loss: {caa_pairs: [SG, SD, GD]}

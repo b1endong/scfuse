@@ -1,0 +1,4 @@
+base: ../baseline.yaml
+run: {name: prompt_dmask}
+model: {head: prompt}
+mask: {train_d: 0.5}

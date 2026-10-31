@@ -1,0 +1,3 @@
+base: ../default.yaml
+run: {name: abl_no_S}
+views: {use: [G, D, A]}

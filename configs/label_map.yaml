@@ -1,0 +1,13 @@
+classes:
+  - {code: REE, name: reentrancy,        swc: [107],           slither: [reentrancy-eth, reentrancy-no-eth, reentrancy-benign], mythril: [107]}
+  - {code: ARI, name: arithmetic,        swc: [101],           slither: [],                                                   mythril: [101]}
+  - {code: ULC, name: unchecked_calls,   swc: [104],           slither: [unchecked-lowlevel, unchecked-send],                 mythril: [104]}
+  - {code: ACC, name: access_control,    swc: [105, 106, 115], slither: [tx-origin, suicidal, arbitrary-send-eth],             mythril: [105, 106, 115]}
+  - {code: DEL, name: delegatecall,      swc: [112],           slither: [controlled-delegatecall, delegatecall-loop],         mythril: [112]}
+  - {code: TSD, name: time_manipulation, swc: [116],           slither: [timestamp],                                          mythril: [116]}
+  - {code: RND, name: bad_randomness,    swc: [120],           slither: [weak-prng],                                          mythril: [120]}
+  - {code: DOS, name: dos,               swc: [113, 128],      slither: [calls-loop, costly-loop],                            mythril: [113, 128]}
+  - {code: TOD, name: front_running,     swc: [114],           slither: [],                                                   mythril: [114]}
+eval_classes: [REE, ARI, ULC, ACC, TSD, TOD]
+external_classes: [REE, ARI, ULC, TOD]
+analyzer_views: {slither: S, mythril: G}

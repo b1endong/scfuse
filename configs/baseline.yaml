@@ -1,0 +1,5 @@
+base: default.yaml
+model: {regime: cached, use_J: false}
+loss: {caa: none}
+supervision: {weak: majority}
+train: {batch_size: 32, n_gold: 4, accum: 1}

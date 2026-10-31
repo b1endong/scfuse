@@ -1,0 +1,5 @@
+base: ../baseline.yaml
+run: {name: tmnr}
+model: {head: evidential}
+fusion: {rule: ds, reliability: one}
+supervision: {weak: tmnr}

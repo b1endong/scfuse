@@ -1,0 +1,5 @@
+base: ../baseline.yaml
+run: {name: tmc}
+model: {head: evidential}
+fusion: {rule: ds, reliability: one}
+loss: {eta: 1.0}

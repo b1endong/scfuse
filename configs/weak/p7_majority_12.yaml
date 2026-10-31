@@ -1,0 +1,4 @@
+base: ../default.yaml
+run: {name: p7_majority_12}
+data: {weak_subset: mythril5k, anchor_n: 12}
+supervision: {weak: majority}

@@ -1,0 +1,3 @@
+base: ../baseline.yaml
+run: {name: shaspec}
+model: {head: shaspec}

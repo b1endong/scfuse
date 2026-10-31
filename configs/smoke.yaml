@@ -1,0 +1,7 @@
+base: default.yaml
+run: {name: smoke, out: "${SCFUSE_OUT:-results}/smoke/runs", ckpt: "${SCFUSE_CKPT:-checkpoints}/smoke", eval: "${SCFUSE_OUT:-results}/smoke/eval"}
+data: {cache: "${SCFUSE_SMOKE:-../SCFuse2.5/data}/smoke", missing_propensity: uniform, num_workers: 2}
+model: {regime: cached}
+supervision: {fallback_rates: [0.6, 0.05]}
+mask: {e_bar: 0.5}
+train: {batch_size: 16, n_gold: 4, accum: 1, max_epochs: 3, patience: 3, eval_batch: 16}

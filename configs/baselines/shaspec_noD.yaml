@@ -1,0 +1,4 @@
+base: ../baseline.yaml
+run: {name: shaspec_noD}
+views: {use: [S, G, A]}
+model: {head: shaspec}

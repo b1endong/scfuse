@@ -1,0 +1,5 @@
+base: ../baseline.yaml
+run: {name: sv_S_codebert}
+views: {use: [S]}
+model: {head: concat}
+data: {feats: codebert-base}

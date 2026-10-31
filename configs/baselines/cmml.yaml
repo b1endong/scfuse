@@ -1,0 +1,4 @@
+base: ../baseline.yaml
+run: {name: cmml}
+views: {use: [S, G]}
+model: {head: cmml}

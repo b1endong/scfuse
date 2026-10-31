@@ -1,0 +1,4 @@
+base: ../default.yaml
+run: {name: abl_frozen}
+model: {regime: cached}
+train: {batch_size: 32, n_gold: 4, accum: 1}

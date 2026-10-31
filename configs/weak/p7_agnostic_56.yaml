@@ -1,0 +1,4 @@
+base: ../default.yaml
+run: {name: p7_agnostic_56}
+data: {weak_subset: mythril5k}
+supervision: {weak: agnostic}

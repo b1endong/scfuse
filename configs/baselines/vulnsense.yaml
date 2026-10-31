@@ -1,0 +1,4 @@
+base: ../baseline.yaml
+run: {name: vulnsense}
+views: {use: [S, G]}
+model: {head: vulnsense}

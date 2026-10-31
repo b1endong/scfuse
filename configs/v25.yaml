@@ -1,0 +1,5 @@
+base: default.yaml
+run: {name: scfuse_v25}
+data: {cache: "${SCFUSE_V25:-../SCFuse2.5/data}/full"}
+views: {use: [S, G, D]}
+loss: {caa: function, caa_pairs: [SG, SD, GD]}

@@ -1,0 +1,5 @@
+base: ../baseline.yaml
+run: {name: ecml}
+model: {head: evidential}
+fusion: {rule: average, reliability: one}
+loss: {eta: 1.0, conflict: 1.0}

@@ -1,0 +1,4 @@
+base: ../baseline.yaml
+run: {name: sv_A}
+views: {use: [A]}
+model: {head: concat}

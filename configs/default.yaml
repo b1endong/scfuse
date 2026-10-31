@@ -1,0 +1,45 @@
+run:
+  name: scfuse
+  out: "${SCFUSE_OUT:-results}/runs"
+  ckpt: "${SCFUSE_CKPT:-checkpoints}"
+  eval: "${SCFUSE_OUT:-results}/eval"
+  analysis: "${SCFUSE_OUT:-results}/analysis"
+seed: 16
+seeds: [16, 32, 64, 128, 256]
+data:
+  cache: "${SCFUSE_DATA:-data}/scfuse"
+  feats: unixcoder-base
+  missing_propensity: error
+  num_workers: 4
+  shuffle_labels: false
+  anchor_kinds: [smartbugs]
+  anchor_n: null
+  weak_subset: all
+  label_fix: [solidifi_unchecked_send_acc]
+  q_drop: {}
+views: {use: [S, G, D, A]}
+model:
+  regime: lora
+  head: evidential
+  reliability_robust: false
+  d: 256
+  dropout: 0.1
+  use_J: true
+  opcode: {ckpt: opcode_mop.pt, d: 128, layers: 2, heads: 4, freeze: true}
+  graph: {layers: 4, heads: 8, rw_steps: 16}
+  cross: {layers: 2, heads: 8}
+  ast: {d: 128, layers: 2, heads: 4, max_units: 32, max_nodes: 256}
+  lora: {backbone: microsoft/unixcoder-base, r: 8, alpha: 16, dropout: 0.05, grad_ckpt: true, max_rows: 64,
+         max_units: 16, max_len: 256}
+  baselines: {prompt_len: 16, prompt_layers: 2, prompt_heads: 4, shaspec_align: 0.1, shaspec_domain: 0.02,
+              lstm_hidden: 128, max_opcodes: 8192, cmml_rec: 1.0, cmml_mutual: 1.0, qmf_lambda: 0.1}
+fusion: {rule: cumulative, reliability: learned, Emax: 20, W: 2, lam_dis: 0.0}
+loss: {t: 0.07, caa: function+span, caa_pairs: [SG, SD, GD, AG, AD], lam_a: 0.5, lam_sp: 0.5, eta: 0.5, lam_w: 1.0,
+       lam_r: 0.1, lam_u: 1.0, kl_anneal_epochs: 2, lam_corrupt: 0.1, conflict: 0.0}
+supervision: {weak: viewbound, kappa: 20, eps0: 1.0, min_anchor_pos: 1, lr_noise: 1.0e-3, prior_scale: batch,
+              fallback_rates: null, base_rate: anchor, tmnr: {lam_conf: 0.01, lam_cons: 10000, lr: 1.0e-3}}
+mask: {train: propensity, e_bar: null, train_d: 0.0}
+train: {batch_size: 8, n_gold: 1, accum: 4, lr_adapter: 1.0e-4, lr_head: 3.0e-4, weight_decay: 0.01, warmup: 0.05,
+        clip: 1.0, bf16: true, max_epochs: 15, patience: 3, max_steps: null, eval_batch: 16, corrupt_d: 0.0,
+        w_clip: 10, uniform_w: false}
+eval: {min_coverage: 0.8, gate_max_reject: 0.02}

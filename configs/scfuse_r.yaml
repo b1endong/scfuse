@@ -1,0 +1,5 @@
+base: default.yaml
+run: {name: scfuse_r}
+model: {reliability_robust: true}
+train: {corrupt_d: 0.25}
+loss: {lam_corrupt: 0.1}
