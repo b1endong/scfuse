@@ -2,8 +2,7 @@
 
 Smart-contract vulnerability detection by compiler-anchored, reliability-discounted evidential fusion of four program
 views: verified source **S** and its AST **A** (optional), the bytecode control-flow graph **G** (always) and
-pseudo-source **D** lifted from bytecode by a code foundation model (always, noisy). Changes from the paper and from
-SCFuse2.5 are listed in [docs/DEVIATIONS.md](docs/DEVIATIONS.md); data files in [docs/DATA.md](docs/DATA.md).
+pseudo-source **D** lifted from bytecode by a code foundation model (always, noisy). 
 
 ```
 configs/            default.yaml (paper Table 6), smoke.yaml, v25.yaml, scfuse_r.yaml, baseline.yaml,
