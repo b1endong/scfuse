@@ -1,0 +1,58 @@
+cff-version: 1.2.0
+message: "If you use SCFuse, please cite the paper below."
+title: "SCFuse"
+abstract: >-
+  Reference implementation of SCFuse, which detects code-level weaknesses in Ethereum smart contracts by
+  compiler-anchored, reliability-discounted evidential fusion of verified source, the bytecode control-flow graph and
+  pseudo-source lifted from bytecode by a code foundation model.
+type: software
+authors:
+  - family-names: Tran
+    given-names: Tuan-Dung
+    orcid: "https://orcid.org/0000-0003-1156-7072"
+    affiliation: "University of Information Technology, Ho Chi Minh City, Vietnam"
+  - family-names: Tran
+    given-names: Hai
+    affiliation: "University of Information Technology, Ho Chi Minh City, Vietnam"
+  - family-names: Huynh
+    given-names: Bao
+    orcid: "https://orcid.org/0009-0008-8773-0482"
+    affiliation: "University of Information Technology, Ho Chi Minh City, Vietnam"
+  - family-names: Pham
+    given-names: Van-Hau
+    orcid: "https://orcid.org/0000-0003-3147-3356"
+    affiliation: "University of Information Technology, Ho Chi Minh City, Vietnam"
+contact:
+  - family-names: Tran
+    given-names: Tuan-Dung
+    email: dungtrt@uit.edu.vn
+repository-code: "https://github.com/b1endong/scfuse"
+license: MIT
+keywords:
+  - smart contracts
+  - vulnerability detection
+  - multi-view learning
+  - evidential fusion
+  - foundation models
+  - low-quality data
+preferred-citation:
+  type: article
+  title: >-
+    SCFuse: Compiler-anchored evidential fusion of low-quality foundation-model program views for smart-contract
+    vulnerability detection
+  authors:
+    - family-names: Tran
+      given-names: Tuan-Dung
+      orcid: "https://orcid.org/0000-0003-1156-7072"
+    - family-names: Tran
+      given-names: Hai
+    - family-names: Huynh
+      given-names: Bao
+      orcid: "https://orcid.org/0009-0008-8773-0482"
+    - family-names: Pham
+      given-names: Van-Hau
+      orcid: "https://orcid.org/0000-0003-3147-3356"
+  year: 2026
+  status: submitted
+  notes: "Preprint submitted to Elsevier"
+  url: "https://github.com/b1endong/scfuse"

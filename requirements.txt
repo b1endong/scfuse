@@ -14,6 +14,5 @@ datasketch==2.0.0
 eth-utils==6.0.0
 pycryptodome==3.23.0
 pytest==9.1.1
-slither-analyzer==0.11.6
-solc-select==1.2.0
-mythril==0.24.8
+# Data preparation also needs solc-select, Slither and Mythril as separate command-line tools (README, Installation):
+# Slither and Mythril pin incompatible versions of eth-abi and cannot share one environment.
