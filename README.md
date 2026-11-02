@@ -12,7 +12,6 @@ Vietnam National University Ho Chi Minh City, Ho Chi Minh City, Vietnam
 [![Python 3.12](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![PyTorch 2.4](https://img.shields.io/badge/PyTorch-2.4-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
-![Paper: preprint](https://img.shields.io/badge/paper-preprint-lightgrey.svg)
 
 </div>
 
